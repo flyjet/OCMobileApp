@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="#2d5b9a"
         android:id="@+id/textView_cat"/>
 
     <!--

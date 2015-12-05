@@ -11,6 +11,10 @@
     <string name="title_activity_my_course">My Course</string>
     <string name="title_activity_course_container">ActivityCourseContainer</string>
     <string name="title_activity_course_intro">ActivityCourseIntro</string>
+    <string name="title_activity_instructor_intro">ActivityInstructorIntro</string>
+    <string name="title_activity_course_detail">ActivityCourseDetail</string>
+    <string name="title_activity_video_player">ActivityVideoPlayer</string>
+
 
     <string name="title_menu_search">Search</string>
 
@@ -29,6 +33,5 @@
     <string name="text_cat_music">Music</string>
     <string name="text_cat_math">Math + Science</string>
     <string name="text_cat_sport">Sport</string>
-    <string name="title_activity_instructor_intro">ActivityInstructorIntro</string>
 
 </resources>

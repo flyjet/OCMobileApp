@@ -3,6 +3,7 @@ package edu.sjsu.qi.onlinecommunity;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.text.Layout;
@@ -15,12 +16,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.os.Handler;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -31,8 +36,7 @@ public class CourseFragment extends Fragment {
 
     private String category = "";
     private TextView textView;
-    private Handler handler;
-    private ListView courseList;
+    private ListView courseListView;
     private List<CourseItem> queryResults;
 
     public CourseFragment() {
@@ -43,6 +47,8 @@ public class CourseFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
+        queryResults = new ArrayList<CourseItem>();
 
         //Get Category from ActivityCourseContainer
         category = getArguments().getString("Category");
@@ -60,36 +66,18 @@ public class CourseFragment extends Fragment {
         textView.setText(category);
 
         //Set the ListView of courses
-        handler = new Handler();
-        courseList = (ListView)view.findViewById(R.id.listView_course);
+        courseListView = (ListView)view.findViewById(R.id.listView_course);
 
-        //TODO: the following code is hard code to click one course in the listview
-        RelativeLayout layout = (RelativeLayout)view.findViewById(R.id.layout_courseItem);
-        final TextView textView = (TextView)view.findViewById(R.id.course_name);
-
-        layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), ActivityCourseIntro.class);
-                intent.putExtra("CourseName", textView.getText().toString());
-                startActivity(intent);
-            }
-        });
-
-        //Todo: above code need to be deleted after implement the OnItemClickListener
-
-
-        //TODO: implement the AsyncTask to query list of courses by key word "category"
-
-        //TODO: implement post task to update query result and show in ListView
-        // showListCourseResult();
+        //query courselist and update view
+        queryCourseListFromDB();
 
         //sets the OnItemClickListener of the ListView
         //so the user can click on a course and go to the course intro
-        courseList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        courseListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> av, View v, int pos, long id) {
                 Intent intent = new Intent(getActivity(), ActivityCourseIntro.class);
+                intent.putExtra("CourseName", textView.getText().toString());
 
                 //TODO: implement to get course ID and send to Activity CourseIntro
                 //intent.putExtra("COURSE_ID", QueryResults.get(pos).getId());
@@ -122,7 +110,6 @@ public class CourseFragment extends Fragment {
                 }
                 return true;
             }
-
             @Override
             public boolean onQueryTextChange(String newText) {
                 return false;
@@ -140,9 +127,10 @@ public class CourseFragment extends Fragment {
         super.onDetach();
     }
 
-    //Use ArrayAdapter and pass it to ListView to display course results
-    //in the getView method, inflate the listview_course_item.xml layout and update its view
 
+
+    //Use ArrayAdapter and pass it to ListView to display course results
+    //In the getView method, inflate the listview_course_item.xml layout and update its view
     private void showListCourseResult() {
 
         //create an ArrayAdapter
@@ -154,21 +142,54 @@ public class CourseFragment extends Fragment {
                 if(convertView == null){
                     convertView = getActivity().getLayoutInflater().inflate(R.layout.listview_course_item, parent, false);
                 }
-                //TODO Initialize UI elements
 
-                final CourseItem course = queryResults.get(position);
+                TextView tvName = (TextView)convertView.findViewById(R.id.course_name);
+                TextView tvInstructor = (TextView)convertView.findViewById(R.id.course_instructor);
+                ImageView ivthumbnail = (ImageView)convertView.findViewById(R.id.course_thumbnail);
+                RatingBar rbCourseRate = (RatingBar)convertView.findViewById(R.id.course_rate);
 
-                //TODO set UI elements
+                CourseItem course = queryResults.get(position);
 
+                tvName.setText(course.getName());
+                tvInstructor.setText(course.getInstructorName());
+                rbCourseRate.setRating(course.getRating());
 
+                //todo Image may save as URL at database,here is hard code
+                ivthumbnail.setImageResource(R.drawable.course_thumbnail_example);
+                //Uri uri = Uri.parse("android.resource://edu.sjsu.qi.onlinecommunity/"+course.getURL());
+                //ivCourseImage.setImageURI(uri);
                 return convertView;
             }
         };
 
         //Assign adapter to ListView
-        courseList.setAdapter(adapter);
+        courseListView.setAdapter(adapter);
     }
 
+    //query Courses for current Category
+    private void queryCourseListFromDB(){
+
+        //TODO: implement the AsyncTask to query list of courses by key word "category"
+
+        //The following is hardcode
+        CourseItem course1 = new CourseItem();
+        CourseItem course2 = new CourseItem();
+        course1.setName("Foundations of Objective-C App Development");
+        course1.setThumbnailURL("drawable/course_thumbnail_example.png");
+        course1.setInstructorName("Don Patterson");
+        course1.setRating((float) 3.80);
+
+        course2.setName("Programming Mobile Applications for Android Handheld Systems");
+        course2.setThumbnailURL("drawable/course_thumbnail_example2.png");
+        course2.setInstructorName("Adam Porter");
+        course2.setRating((float) 4.60);
+
+        queryResults.add(course1);
+        queryResults.add(course2);
+
+        //after background query done, update UI
+        showListCourseResult();
+    }
 
 
 }

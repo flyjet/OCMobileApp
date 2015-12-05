@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     Button bt_login, bt_signup;
-    ImageButton imageBt_facebook, imageBt_gmail;
+    ImageButton imageBt_facebook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,6 @@ public class MainActivity extends Activity {
         bt_login = (Button) findViewById(R.id.button_login);
         bt_signup = (Button) findViewById(R.id.button_signup);
         imageBt_facebook = (ImageButton) findViewById(R.id.button_login_facebook);
-        imageBt_gmail = (ImageButton) findViewById(R.id.button_login_gmail);
 
         //Actions of Login Button - goto activity login
         bt_login.setOnClickListener(new View.OnClickListener(){
@@ -58,8 +57,6 @@ public class MainActivity extends Activity {
 
         //TODO: implement actions of facebook_login
 
-
-        //TODO: implement actions of gmail_login
     }
 
 }

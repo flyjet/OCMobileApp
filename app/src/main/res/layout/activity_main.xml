@@ -85,6 +85,7 @@
 
             android:layout_marginRight="50dp"
             android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
             android:padding="10dp">
             <ImageButton
                 android:layout_width="fill_parent"
@@ -96,17 +97,6 @@
                 android:layout_weight="1"
                 android:background="@null" />
 
-
-            <ImageButton
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/button_login_gmail"
-                android:src="@drawable/login_gmail"
-                android:scaleType="fitCenter"
-                android:layout_marginTop="-15dp"
-                android:layout_marginBottom="-15dp"
-                android:background="@null"
-                android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
 

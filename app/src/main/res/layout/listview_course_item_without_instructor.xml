@@ -2,14 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
     android:background="#ffffff">
 
     <ImageView
         android:id="@+id/course_thumbnail"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_margin="10dp" />
 
     <TextView android:id="@+id/course_name"
@@ -19,15 +19,8 @@
         android:layout_alignParentTop="true"
         android:layout_margin="6dp"
         android:textSize="14sp"
+        android:textColor="#000000"
         android:textStyle="bold" />
-
-    <TextView android:id="@+id/course_instructor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="6dp"
-        android:layout_toRightOf="@+id/course_thumbnail"
-        android:layout_below="@+id/course_name"
-        android:textSize="12sp" />
 
     <RatingBar
         android:id="@+id/course_rate"
@@ -36,7 +29,12 @@
         style="?android:attr/ratingBarStyleSmall"
         android:layout_below="@+id/course_name"
         android:layout_margin="6dp"
-        android:layout_alignParentRight="true"/>
+        android:layout_toRightOf="@+id/course_thumbnail" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#e7f6ff"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

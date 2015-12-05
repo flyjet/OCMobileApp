@@ -1,16 +1,16 @@
 package edu.sjsu.qi.onlinecommunity;
 
 /**
- * Created by qi on 11/4/15.
+ * Created by qi on 12/4/15.
  */
-public class CourseItem {
-
+public class InstructorItem {
     private int id;
     private String name;
-    private String description;
-    private float rating;
-    private String instructorName;
+    private String school;
+    private Float rating;
     private String thumbnailURL;
+    private String description;
+
     private String BigImageURL;
     private String IntroVideoRUL;
 
@@ -22,13 +22,6 @@ public class CourseItem {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description){
-        this.description = description;
-    }
-
     public String getName() {
         return name;
     }
@@ -37,20 +30,20 @@ public class CourseItem {
         this.name = name;
     }
 
-    public float getRating() {
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public Float getRating() {
         return rating;
     }
 
-    public void setRating(float rating) {
+    public void setRating(Float rating) {
         this.rating = rating;
-    }
-
-    public String getInstructorName() {
-        return instructorName;
-    }
-
-    public void setInstructorName(String instructorName) {
-        this.instructorName = instructorName;
     }
 
     public String getThumbnailURL() {
@@ -59,6 +52,14 @@ public class CourseItem {
 
     public void setThumbnailURL(String thumbnailURL) {
         this.thumbnailURL = thumbnailURL;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getBigImageURL() {

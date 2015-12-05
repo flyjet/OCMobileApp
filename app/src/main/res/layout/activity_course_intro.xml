@@ -1,15 +1,250 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="edu.sjsu.qi.onlinecommunity.ActivityCourseIntro">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.sjsu.qi.onlinecommunity.ActivityCourseIntro"
+    android:background="#e7f6ff">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-</RelativeLayout>
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView_intro"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/course_background_example"
+            android:scaleType="fitStart"
+            android:clickable="true">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView_title"
+                    android:padding="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#2d5b9a"
+                    android:text="Course Title"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_title"
+                    android:id="@+id/textView_titleContent"
+                    android:padding="5dp"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView_des"
+                    android:padding="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#2d5b9a"
+                    android:text="Course Description"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_des"
+                    android:id="@+id/textView_DesContent"
+                    android:padding="5dp"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView_rate"
+                    android:padding="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#2d5b9a"
+                    android:text="Course Rating"/>
+
+                <RatingBar
+                    android:id="@+id/course_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_below="@+id/textView_rate"
+                    android:clickable="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_rate"
+                    android:id="@+id/textView_RateContent"
+                    android:padding="5dp"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView_language"
+                    android:padding="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#2d5b9a"
+                    android:text="Language:"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/textView_language"
+                    android:id="@+id/textView_LanContent"
+                    android:padding="5dp"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView_workload"
+                    android:layout_below="@+id/textView_language"
+                    android:padding="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#2d5b9a"
+                    android:text="Workload:"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/textView_workload"
+                    android:layout_below="@+id/textView_LanContent"
+                    android:id="@+id/textView_WorkContent"
+                    android:padding="5dp"
+                    android:layout_marginLeft="2dp"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView_price"
+                    android:layout_below="@+id/textView_workload"
+                    android:padding="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#2d5b9a"
+                    android:text="Price:"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/textView_price"
+                    android:layout_below="@+id/textView_WorkContent"
+                    android:id="@+id/textView_PriceContent"
+                    android:padding="5dp"
+                    android:layout_marginLeft="32dp"
+                    android:textSize="15sp"
+                    android:text="Free"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_instructor"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/instructor_thumbnail"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_margin="10dp" />
+
+                <TextView android:id="@+id/instructor_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/instructor_thumbnail"
+                    android:layout_alignParentTop="true"
+                    android:paddingTop="8dp"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView android:id="@+id/instructor_background"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_toRightOf="@+id/instructor_thumbnail"
+                    android:layout_below="@+id/instructor_name"
+                    android:textSize="12sp" />
+
+                <RatingBar
+                    android:id="@+id/instructor_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_below="@+id/instructor_background"
+                    android:layout_margin="5dp"
+                    android:layout_toRightOf="@+id/instructor_thumbnail"/>
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JOIN"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            android:background="#1874CD"
+            android:id="@+id/bt_join" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>

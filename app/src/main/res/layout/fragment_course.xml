@@ -12,111 +12,15 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="#2d5b9a"
         android:id="@+id/textView_cat"/>
-
-    <!--
-        The following two relativeLayout is only for example, since it is hard code,
-        later need be delete
-    -->
-
-    <RelativeLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:layout_marginTop="8dp"
-        android:id="@+id/layout_courseItem">
-
-        <ImageView
-            android:id="@+id/course_thumbnail"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/course_thumbnail_example"/>
-
-        <TextView android:id="@+id/course_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/course_thumbnail"
-            android:layout_alignParentTop="true"
-            android:layout_margin="6dp"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:text="Foundations of Objective-C App Development"/>
-
-        <TextView android:id="@+id/course_instructor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:layout_toRightOf="@+id/course_thumbnail"
-            android:layout_below="@+id/course_name"
-            android:textSize="12sp"
-            android:text="Don Patterson"/>
-
-        <RatingBar
-            android:id="@+id/course_rate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_below="@+id/course_name"
-            android:layout_margin="6dp"
-            android:layout_alignParentRight="true"/>
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:layout_marginTop="6dp">
-
-        <ImageView
-            android:id="@+id/course_thumbnail2"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/course_thumbnail_example2"/>
-
-        <TextView android:id="@+id/course_name2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/course_thumbnail2"
-            android:layout_alignParentTop="true"
-            android:layout_margin="6dp"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:text="Programming Mobile Applications for Android Handheld Systems: Part 1"/>
-
-        <TextView android:id="@+id/course_instructor2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:layout_toRightOf="@+id/course_thumbnail2"
-            android:layout_below="@+id/course_name2"
-            android:textSize="12sp"
-            android:text="Adam Porter"/>
-
-        <RatingBar
-            android:id="@+id/course_rate2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_below="@+id/course_name2"
-            android:layout_margin="6dp"
-            android:layout_alignParentRight="true"/>
-
-    </RelativeLayout>
-    <!--
-    Above need be deleted later
-    -->
-
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listView_course"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="6sp"
         android:layout_marginTop="10dp">
     </ListView>
 

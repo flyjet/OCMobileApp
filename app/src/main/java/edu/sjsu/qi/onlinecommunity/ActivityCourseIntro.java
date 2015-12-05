@@ -1,13 +1,30 @@
 package edu.sjsu.qi.onlinecommunity;
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 public class ActivityCourseIntro extends Activity {
+
+    private static final String TAG = ActivityCourseIntro.class.getSimpleName();
+
+    ImageButton ibBack;
+    Button btJoin;
+    ImageView ivIntro;
+
+
+    String courseName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,13 +33,68 @@ public class ActivityCourseIntro extends Activity {
 
         //TODO: Implement to query course information by course ID
 
-        //Todo: the follow code can be deleted
+        //TODO: init textView and update its value
+
         //get Course Name from Fragment Course
         Bundle extras = getIntent().getExtras();
-        String courseName  = extras.getString("CourseName");
-        TextView textView = (TextView)findViewById(R.id.textView);
-        textView.setText(courseName);
+        courseName  = extras.getString("CourseName");
 
+        ivIntro = (ImageView)findViewById(R.id.imageView_intro);
+        //when user click the the imageView, it will go to Activity VideoPlayer
+        ivIntro.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void onClick(View view){
+                Intent intent = new Intent(ActivityCourseIntro.this, ActivityVideoPlayer.class );
+                intent.putExtra("CourseName", courseName);
+                startActivity(intent);
+            }
+        });
+
+        btJoin = (Button)findViewById(R.id.bt_join);
+        //when user click join button, it will go to Activity CourseDetail
+        btJoin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ActivityCourseIntro.this, ActivityCourseDetail.class);
+                intent.putExtra("CourseName", courseName);
+                startActivity(intent);
+            }
+        });
+
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.layout_instructor);
+        layout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(ActivityCourseIntro.this, ActivityInstructorIntro.class);
+                intent.putExtra("InstructorName", "Sample");
+                startActivity(intent);
+            }
+        });
+
+
+        // Set up the action bar
+        ActionBar actionBar = getActionBar();
+
+        //Hiding ActionBar icon and title
+        actionBar.setDisplayShowHomeEnabled(false);
+
+        //Show the custom ActionBar with the icon_back
+        View mActionBarView = getLayoutInflater().inflate(R.layout.action_bar_back,null);
+        actionBar.setCustomView(mActionBarView);
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+
+        ibBack = (ImageButton) findViewById(R.id.button_back);
+        ibBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Goto activity Category
+                try {
+                    finish();
+                } catch (Exception e) {
+                    Log.e(TAG, e.toString());
+                }
+            }
+        });
     }
 
     @Override
@@ -38,11 +110,6 @@ public class ActivityCourseIntro extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
