@@ -14,6 +14,7 @@
     <string name="title_activity_instructor_intro">ActivityInstructorIntro</string>
     <string name="title_activity_course_detail">ActivityCourseDetail</string>
     <string name="title_activity_video_player">ActivityVideoPlayer</string>
+    <string name="title_activity_user_profile">ActivityUserProfile</string>
 
 
     <string name="title_menu_search">Search</string>
@@ -33,5 +34,8 @@
     <string name="text_cat_music">Music</string>
     <string name="text_cat_math">Math + Science</string>
     <string name="text_cat_sport">Sport</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_activity_user_edit_profile">ActivityUserEditProfile</string>
 
 </resources>

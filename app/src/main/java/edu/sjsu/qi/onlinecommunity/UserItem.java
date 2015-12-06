@@ -1,16 +1,14 @@
 package edu.sjsu.qi.onlinecommunity;
 
 /**
- * Created by qi on 12/4/15.
+ * Created by qi on 12/5/15.
  */
-public class InstructorItem {
+public class UserItem {
     private int id;
-    private String instructorName;
-    private String school;
-    private Float rating;
-    private String thumbnailURL;
+    private String userName;
+    private String Email;
     private String description;
-
+    private String thumbnailURL;
     private String BigImageURL;
     private String IntroVideoRUL;
 
@@ -22,36 +20,20 @@ public class InstructorItem {
         this.id = id;
     }
 
-    public String getInstructorName() {
-        return instructorName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setInstructorName(String instructorName) {
-        this.instructorName = instructorName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getSchool() {
-        return school;
+    public String getEmail() {
+        return Email;
     }
 
-    public void setSchool(String school) {
-        this.school = school;
-    }
-
-    public Float getRating() {
-        return rating;
-    }
-
-    public void setRating(Float rating) {
-        this.rating = rating;
-    }
-
-    public String getThumbnailURL() {
-        return thumbnailURL;
-    }
-
-    public void setThumbnailURL(String thumbnailURL) {
-        this.thumbnailURL = thumbnailURL;
+    public void setEmail(String email) {
+        Email = email;
     }
 
     public String getDescription() {
@@ -60,6 +42,14 @@ public class InstructorItem {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getThumbnailURL() {
+        return thumbnailURL;
+    }
+
+    public void setThumbnailURL(String thumbnailURL) {
+        this.thumbnailURL = thumbnailURL;
     }
 
     public String getBigImageURL() {

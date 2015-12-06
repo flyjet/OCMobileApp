@@ -50,6 +50,9 @@ public class ActivityCourseIntro extends Activity {
             }
         });
 
+        //TODO, first to identify user already join the course or not
+        //if joined, then set Join button invisible
+
         btJoin = (Button)findViewById(R.id.bt_join);
         //when user click join button, it will go to Activity CourseDetail
         btJoin.setOnClickListener(new View.OnClickListener() {

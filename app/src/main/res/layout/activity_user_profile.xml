@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#e7f6ff"
+    tools:context="edu.sjsu.qi.skibuddy.ActivityUserProfile">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/user_thumbnail"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_margin="10dp" />
+
+        <TextView android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/user_thumbnail"
+            android:layout_alignParentTop="true"
+            android:paddingTop="10dp"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView android:id="@+id/user_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/user_thumbnail"
+            android:layout_below="@+id/user_name"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Out"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:background="#ffffff"
+        android:id="@+id/bt_Signout" />
+
+
+
+
+</LinearLayout>
+

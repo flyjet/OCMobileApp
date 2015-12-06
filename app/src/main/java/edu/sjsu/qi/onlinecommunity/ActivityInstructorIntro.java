@@ -3,17 +3,12 @@ package edu.sjsu.qi.onlinecommunity;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -40,8 +35,6 @@ public class ActivityInstructorIntro extends Activity {
     private RatingBar rating, courseRate;
     private ListView lvCourse;
     private LinearLayout linearLayoutCourse;
-
-
 
 
     @Override
@@ -134,7 +127,7 @@ public class ActivityInstructorIntro extends Activity {
 
         //The following is hard code
         instructor = new InstructorItem();
-        instructor.setName("Don Patterson");
+        instructor.setInstructorName("Don Patterson");
         instructor.setSchool("University of California, Irvine");
         instructor.setRating((float) 4.9);
         instructor.setDescription("Don Patterson is Associate Professor of Donald Bren School " +
@@ -146,11 +139,17 @@ public class ActivityInstructorIntro extends Activity {
 
         CourseItem course1 = new CourseItem();
         CourseItem course2 = new CourseItem();
-        course1.setName("Foundations of Objective-C App Development");
+        CourseItem course3 = new CourseItem();
+        course1.setCourseName("Foundations of Objective-C App Development");
         course1.setRating((float) 3.80);
 
-        course2.setName("Software Testing");
+        course2.setCourseName("iOS App Development Basics");
         course2.setRating((float) 4.60);
+
+        course3.setCourseName("Best Practices for iOS User Interface Design");
+        course3.setRating((float)4.90);
+
+
 
         listCourses.add(course1);
         listCourses.add(course2);
@@ -161,7 +160,7 @@ public class ActivityInstructorIntro extends Activity {
 
     void updateInstructorDetail(){
 
-        tvName.setText(instructor.getName());
+        tvName.setText(instructor.getInstructorName());
         tvSchool.setText(instructor.getSchool());
         tvDescription.setText(instructor.getDescription());
         ivThumbnail.setImageResource(R.drawable.instructor_example);
@@ -186,7 +185,7 @@ public class ActivityInstructorIntro extends Activity {
             //after done, set view value
 
             ivCourseThumbnail.setImageResource(R.drawable.course_thumbnail_example);
-            tvCourseName.setText(course.getName());
+            tvCourseName.setText(course.getCourseName());
             courseRate.setRating(course.getRating());
 
         }
@@ -221,7 +220,7 @@ public class ActivityInstructorIntro extends Activity {
                 //after done, set view value
 
                 ivCourseThumbnail.setImageResource(R.drawable.course_thumbnail_example);
-                tvCourseName.setText(course.getName());
+                tvCourseName.setText(course.getCourseName());
                 courseRate.setRating(course.getRating());
                 return convertView;
             }

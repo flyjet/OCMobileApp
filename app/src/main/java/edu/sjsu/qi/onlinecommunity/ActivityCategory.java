@@ -24,7 +24,7 @@ public class ActivityCategory extends Activity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    ImageButton ibMyCourse;
+    ImageButton ibUser;
     TextView textView;
     RelativeLayout relativeLayout;
     String[] cat = {"art", "com", "fin", "life", "lan", "music", "math", "sport"};
@@ -59,10 +59,7 @@ public class ActivityCategory extends Activity {
                         Intent intent = new Intent(ActivityCategory.this, ActivityCourseContainer.class);
                         intent.putExtra("CATEGORY", category);
 
-                        //TODO: after user click one Category, need query data from Database
-
-                        //May query data by CategoryID
-
+                        //TODO May query data by CategoryID
                         startActivity(intent);
                     }catch(Exception e){
                         Log.e(TAG, e.toString());
@@ -83,13 +80,13 @@ public class ActivityCategory extends Activity {
         actionBar.setCustomView(mActionBarView);
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 
-        ibMyCourse = (ImageButton) findViewById(R.id.button_mycourse);
-        ibMyCourse.setOnClickListener(new View.OnClickListener(){
+        ibUser = (ImageButton) findViewById(R.id.button_mycourse);
+        ibUser.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 //Goto activity MyCourse
                 try{
-                    Intent intent = new Intent(ActivityCategory.this, ActivityMyCourse.class);
+                    Intent intent = new Intent(ActivityCategory.this, ActivityUserProfile.class);
                     startActivity(intent);
                 }catch(Exception e){
                     Log.e(TAG, e.toString());
@@ -101,8 +98,10 @@ public class ActivityCategory extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_search, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_category, menu);
+        return true;
 
+        /* //don't need search bar here
         // Associate searchable configuration with the SearchView
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         final SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
@@ -115,22 +114,18 @@ public class ActivityCategory extends Activity {
                 searchView.clearFocus();
                 if(!TextUtils.isEmpty(query)){
                     //TODO: need implement search function, such as user search one course,
-                    //TODO: it will show list of course
                     //here is only show the search Text
                     Toast.makeText(getApplicationContext(), "You are searching " + query ,
                              Toast.LENGTH_LONG).show();
                 }
                 return true;
             }
-
             @Override
             public boolean onQueryTextChange(String newText){
                 return false;
             }
+        }); */
 
-        });
-
-        return true;
     }
 
     @Override
@@ -139,6 +134,12 @@ public class ActivityCategory extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
 
+        int id = item.getItemId();
+        if(id == R.id.action_course){
+            Intent intent = new Intent(ActivityCategory.this, ActivityMyCourse.class);
+            //Todo May need putExtra for userId
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 }

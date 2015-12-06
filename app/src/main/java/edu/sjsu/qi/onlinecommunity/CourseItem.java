@@ -6,7 +6,7 @@ package edu.sjsu.qi.onlinecommunity;
 public class CourseItem {
 
     private int id;
-    private String name;
+    private String courseName;
     private String description;
     private float rating;
     private String instructorName;
@@ -29,12 +29,12 @@ public class CourseItem {
         this.description = description;
     }
 
-    public String getName() {
-        return name;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
     public float getRating() {

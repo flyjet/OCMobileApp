@@ -31,17 +31,6 @@
             android:name=".ActivityCategory"
             android:label="@string/title_activity_category"
             android:theme="@style/CustomActionBarTheme" >
-
-            <!-- to identify this activity as "searchable" -->
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
         </activity>
         <activity
             android:name=".ActivityMyCourse"
@@ -77,12 +66,21 @@
         <activity
             android:name=".ActivityCourseDetail"
             android:label="@string/title_activity_course_detail"
-            android:theme="@style/CustomActionBarTheme">
+            android:theme="@style/CustomActionBarTheme" >
         </activity>
         <activity
             android:name=".ActivityVideoPlayer"
             android:label="@string/title_activity_video_player"
-            android:theme="@style/CustomActionBarTheme">
+            android:theme="@style/CustomActionBarTheme" >
+        </activity>
+        <activity
+            android:name=".ActivityUserProfile"
+            android:label="@string/title_activity_user_profile"
+            android:theme="@style/CustomActionBarTheme" >
+        </activity>
+        <activity
+            android:name=".ActivityUserEditProfile"
+            android:label="@string/title_activity_activity_user_edit_profile" >
         </activity>
     </application>
 

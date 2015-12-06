@@ -15,114 +15,12 @@
         android:textColor="#2d5b9a"
         android:id="@+id/textView_cat"/>
 
-    <!--
-        The following two relativeLayout is only for example, since it is hard code,
-        later need be delete
-    -->
-
-    <RelativeLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:layout_marginTop="8dp"
-        android:id="@+id/layout_instructorItem">
-
-        <ImageView
-            android:id="@+id/instructor_thumbnail"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/instructor_example"/>
-
-        <TextView android:id="@+id/instructor_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/instructor_thumbnail"
-            android:layout_alignParentTop="true"
-            android:paddingTop="8dp"
-            android:layout_margin="5dp"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:text="Don Patterson"/>
-
-        <TextView android:id="@+id/instructor_background"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_toRightOf="@+id/instructor_thumbnail"
-            android:layout_below="@+id/instructor_name"
-            android:textSize="12sp"
-            android:text="University of California, Irvine"/>
-
-        <RatingBar
-            android:id="@+id/instructor_rate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_below="@+id/instructor_background"
-            android:layout_toRightOf="@+id/instructor_thumbnail"
-            android:layout_margin="5dp" />
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:layout_marginTop="8dp">
-
-        <ImageView
-            android:id="@+id/instructor_thumbnail2"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/instructor_example2"/>
-
-        <TextView android:id="@+id/instructor_name2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/instructor_thumbnail2"
-            android:layout_alignParentTop="true"
-            android:paddingTop="8dp"
-            android:layout_margin="5dp"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:text="Dr. Adam Porter"/>
-
-        <TextView android:id="@+id/instructor_background2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_toRightOf="@+id/instructor_thumbnail2"
-            android:layout_below="@+id/instructor_name2"
-            android:textSize="12sp"
-            android:text="University of Maryland, College Park"/>
-
-        <RatingBar
-            android:id="@+id/instructor_rate2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_below="@+id/instructor_background2"
-            android:layout_toRightOf="@+id/instructor_thumbnail2"
-            android:layout_margin="5dp" />
-
-    </RelativeLayout>
-
-
-
-    <!--
-    Above need be deleted later
-    -->
-
-
     <ListView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listView_instructor"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="6sp"
         android:layout_marginTop="10dp">
     </ListView>
 

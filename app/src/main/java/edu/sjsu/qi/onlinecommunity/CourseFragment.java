@@ -3,10 +3,8 @@ package edu.sjsu.qi.onlinecommunity;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.text.Layout;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,10 +17,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RatingBar;
-import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.os.Handler;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -150,7 +146,7 @@ public class CourseFragment extends Fragment {
 
                 CourseItem course = queryResults.get(position);
 
-                tvName.setText(course.getName());
+                tvName.setText(course.getCourseName());
                 tvInstructor.setText(course.getInstructorName());
                 rbCourseRate.setRating(course.getRating());
 
@@ -174,12 +170,12 @@ public class CourseFragment extends Fragment {
         //The following is hardcode
         CourseItem course1 = new CourseItem();
         CourseItem course2 = new CourseItem();
-        course1.setName("Foundations of Objective-C App Development");
+        course1.setCourseName("Foundations of Objective-C App Development");
         course1.setThumbnailURL("drawable/course_thumbnail_example.png");
         course1.setInstructorName("Don Patterson");
         course1.setRating((float) 3.80);
 
-        course2.setName("Programming Mobile Applications for Android Handheld Systems");
+        course2.setCourseName("Programming Mobile Applications for Android Handheld Systems");
         course2.setThumbnailURL("drawable/course_thumbnail_example2.png");
         course2.setInstructorName("Adam Porter");
         course2.setRating((float) 4.60);
