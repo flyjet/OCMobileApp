@@ -73,7 +73,6 @@ public class CourseFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> av, View v, int pos, long id) {
                 Intent intent = new Intent(getActivity(), ActivityCourseIntro.class);
-                intent.putExtra("CourseName", textView.getText().toString());
 
                 //TODO: implement to get course ID and send to Activity CourseIntro
                 //intent.putExtra("COURSE_ID", QueryResults.get(pos).getId());

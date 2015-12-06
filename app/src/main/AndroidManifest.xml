@@ -80,7 +80,22 @@
         </activity>
         <activity
             android:name=".ActivityUserEditProfile"
-            android:label="@string/title_activity_activity_user_edit_profile" >
+            android:label="@string/title_activity_user_edit_profile"
+            android:theme="@style/CustomActionBarTheme" >
+        </activity>
+        <activity
+            android:name=".ActivityLesson"
+            android:label="@string/title_activity_lesson"
+            android:theme="@style/CustomActionBarTheme" >
+        </activity>
+        <activity
+            android:name=".ActivityInClass"
+            android:label="@string/title_activity_in_class" >
+        </activity>
+        <activity
+            android:name=".ActivityChat"
+            android:label="@string/title_activity_chat"
+            android:theme="@style/CustomActionBarTheme">
         </activity>
     </application>
 

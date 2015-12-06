@@ -63,8 +63,9 @@ public class ActivityCourseContainer extends Activity {
             public void onClick(View v){
                 //Goto activity Category
                 try{
-                    Intent intent = new Intent(ActivityCourseContainer.this, ActivityCategory.class);
-                    startActivity(intent);
+                    finish();
+                    //Intent intent = new Intent(ActivityCourseContainer.this, ActivityCategory.class);
+                    //startActivity(intent);
                 }catch(Exception e){
                     Log.e(TAG, e.toString());
                 }

@@ -1,0 +1,48 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.sjsu.qi.onlinecommunity.ActivityChat">
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="6sp"
+        android:id="@+id/listView_chat">
+    </ListView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="#e7f6ff">
+
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="6dp"
+            android:padding="5dp"
+            android:background="@drawable/border"
+            android:textSize="15sp"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/bt_Send"
+            android:text="Send"
+            android:textSize="14sp"
+            android:layout_weight="6"
+            android:layout_marginTop="6dp"
+            android:background="@android:color/transparent"
+            />
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

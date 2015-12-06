@@ -36,8 +36,8 @@ public class ActivityCourseIntro extends Activity {
         //TODO: init textView and update its value
 
         //get Course Name from Fragment Course
-        Bundle extras = getIntent().getExtras();
-        courseName  = extras.getString("CourseName");
+        //Bundle extras = getIntent().getExtras();
+        //courseName  = extras.getString("CourseName");
 
         ivIntro = (ImageView)findViewById(R.id.imageView_intro);
         //when user click the the imageView, it will go to Activity VideoPlayer
@@ -45,7 +45,7 @@ public class ActivityCourseIntro extends Activity {
             @Override
             public  void onClick(View view){
                 Intent intent = new Intent(ActivityCourseIntro.this, ActivityVideoPlayer.class );
-                intent.putExtra("CourseName", courseName);
+                //intent.putExtra("CourseName", courseName);
                 startActivity(intent);
             }
         });
