@@ -32,10 +32,15 @@ public class ActivityLesson extends Activity {
         tvLessonName = (TextView)findViewById(R.id.tv_lessonName);
         tvLessonDes  = (TextView)findViewById(R.id.tv_DesContent);
 
-        btInClass = (Button)findViewById(R.id.bt_InClass);
-        btChat = (Button)findViewById(R.id.bt_Chat);
-        btPlayVideo = (Button)findViewById(R.id.bt_PlayVideo);
+        btInClass = (Button)findViewById(R.id.button_gotoclass);
+        btChat = (Button)findViewById(R.id.button_chat);
+        btPlayVideo = (Button)findViewById(R.id.button_watchvideo);
 
+        //TODO if the lesson is for future, may set buttonInClass to light color and not clickable
+        //For example
+        btInClass.setBackground(getResources().getDrawable(R.drawable.notclickbutton));
+
+        btInClass.setClickable(false);
         btInClass.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

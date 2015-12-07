@@ -4,6 +4,10 @@
 
     <string name="button_login">LOGIN</string>
     <string name="button_signup">SIGNUP</string>
+    <string name="button_gotoclass">GO TO CLASS</string>
+    <string name="button_chat">CHAT</string>
+    <string name="button_watchvideo">WATCH VIDEO</string>
+
     <string name='or'>OR</string>
     <string name="title_activity_login">Log In</string>
     <string name="title_activity_signup">Sign Up</string>

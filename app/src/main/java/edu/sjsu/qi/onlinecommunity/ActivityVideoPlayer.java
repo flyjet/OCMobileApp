@@ -24,7 +24,7 @@ public class ActivityVideoPlayer extends Activity {
         setContentView(R.layout.activity_video_player);
 
         Bundle extras = getIntent().getExtras();
-        videoName = extras.getString("CourseName");
+        //videoName = extras.getString("CourseName");
 
         //Todo need implement video player
 

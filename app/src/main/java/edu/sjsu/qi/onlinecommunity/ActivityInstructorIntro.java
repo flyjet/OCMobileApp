@@ -9,9 +9,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -26,15 +28,13 @@ public class ActivityInstructorIntro extends Activity {
 
     private ImageView ivIntro, ivThumbnail, ivCourseThumbnail;
     private ImageButton ibBack;
-    private String instructorName;
 
-    private List<CourseItem> listCourses;
+    private List<CourseItem> queryResults;
     private InstructorItem instructor;
 
     private TextView tvName, tvSchool, tvDescription, tvCourseName;
     private RatingBar rating, courseRate;
-    private ListView lvCourse;
-    private LinearLayout linearLayoutCourse;
+    private ListView courseListView;
 
 
     @Override
@@ -48,20 +48,23 @@ public class ActivityInstructorIntro extends Activity {
         tvDescription = (TextView)findViewById(R.id.textView_DesContent);
         rating = (RatingBar)findViewById(R.id.instructor_rate);
 
-        linearLayoutCourse = (LinearLayout)findViewById(R.id.linearLayout_course);
-        linearLayoutCourse.setOnClickListener(new View.OnClickListener(){
+        courseListView = (ListView)findViewById(R.id.lv_course);
+
+        //sets the OnItemClickListener of the ListView
+        //so the user can click on a course and go to the course intro
+        courseListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v){
+            public void onItemClick(AdapterView<?> av, View v, int pos, long id) {
                 Intent intent = new Intent(ActivityInstructorIntro.this, ActivityCourseIntro.class);
 
-                //TODO may have bug to go to next activity
-                intent.putExtra("CourseName", tvCourseName.getText().toString());
-                startActivity(intent);
+                //TODO: implement to get course ID and send to Activity CourseIntro
+                //intent.putExtra("COURSE_ID", QueryResults.get(pos).getId());
 
+                startActivity(intent);
             }
         });
 
-
+        /*Remove the bigImage for instructor
         ivIntro = (ImageView)findViewById(R.id.imageView_intro);
         //when user click the the imageView, it will go to Activity VideoPlayer
         ivIntro.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +74,7 @@ public class ActivityInstructorIntro extends Activity {
                 intent.putExtra("InstructorName", instructorName);
                 startActivity(intent);
             }
-        });
+        });*/
 
         // Set up the action bar
         ActionBar actionBar = getActionBar();
@@ -135,7 +138,7 @@ public class ActivityInstructorIntro extends Activity {
                 "at 2005. And he conducts research in the areas of Ubiquitous Computing, " +
                 "Human Computer Interaction, Artificial Intelligence.");
 
-        listCourses = new ArrayList<CourseItem>();
+        queryResults = new ArrayList<CourseItem>();
 
         CourseItem course1 = new CourseItem();
         CourseItem course2 = new CourseItem();
@@ -149,10 +152,8 @@ public class ActivityInstructorIntro extends Activity {
         course3.setCourseName("Best Practices for iOS User Interface Design");
         course3.setRating((float)4.90);
 
-
-
-        listCourses.add(course1);
-        listCourses.add(course2);
+        queryResults.add(course1);
+        queryResults.add(course2);
 
         //when done, update view
         updateInstructorDetail();
@@ -164,69 +165,36 @@ public class ActivityInstructorIntro extends Activity {
         tvSchool.setText(instructor.getSchool());
         tvDescription.setText(instructor.getDescription());
         ivThumbnail.setImageResource(R.drawable.instructor_example);
-        ivIntro.setImageResource(R.drawable.instructor_background_example);
+        //ivIntro.setImageResource(R.drawable.instructor_background_example);
         rating.setRating(instructor.getRating());
 
 
-
-        for(int i=0; i<listCourses.size(); i++ ){
-
-            View convertView = LayoutInflater.from(getApplicationContext()).inflate(
-                    R.layout.listview_course_item_without_instructor, null);
-            linearLayoutCourse.addView(convertView);
-
-            ivCourseThumbnail = (ImageView)convertView.findViewById(R.id.course_thumbnail);
-            tvCourseName = (TextView)convertView.findViewById(R.id.course_name);
-            courseRate = (RatingBar)convertView.findViewById(R.id.course_rate);
-
-            CourseItem course = new CourseItem();
-            course = listCourses.get(i);
-            //Todo may need do background Task to download course Thumbnail
-            //after done, set view value
-
-            ivCourseThumbnail.setImageResource(R.drawable.course_thumbnail_example);
-            tvCourseName.setText(course.getCourseName());
-            courseRate.setRating(course.getRating());
-
-        }
-
-
-
-
-
-
-
-        /* Can not use listview in scrollview
-        //create an ArrayAdapter to show the courses listview
-
+        //create an ArrayAdapter
         ArrayAdapter<CourseItem> adapter = new ArrayAdapter<CourseItem>(getApplicationContext(),
-                R.layout.listview_course_item_without_instructor,listCourses){
-
+                R.layout.listview_course_item_without_instructor, queryResults){
             @Override
             public View getView(int position, View convertView, ViewGroup parent){
 
                 if(convertView == null){
-                    convertView = getLayoutInflater().inflate(R.layout.listview_course_item_without_instructor,
-                           parent, false);
+                    convertView = getLayoutInflater().inflate(R.layout.listview_course_item, parent, false);
                 }
 
                 ivCourseThumbnail = (ImageView)convertView.findViewById(R.id.course_thumbnail);
                 tvCourseName = (TextView)convertView.findViewById(R.id.course_name);
                 courseRate = (RatingBar)convertView.findViewById(R.id.course_rate);
 
-                CourseItem course = new CourseItem();
-                course = listCourses.get(position);
-                //Todo may need do background Task to download course Thumbnail
-                //after done, set view value
+                CourseItem course = queryResults.get(position);
 
-                ivCourseThumbnail.setImageResource(R.drawable.course_thumbnail_example);
                 tvCourseName.setText(course.getCourseName());
                 courseRate.setRating(course.getRating());
+                //todo Image may save as URL at database,here is hard code
+                ivCourseThumbnail.setImageResource(R.drawable.course_thumbnail_example);
+
                 return convertView;
             }
         };
         //Assign adapter to Listview
-        lvCourse.setAdapter(adapter);  */
+        courseListView.setAdapter(adapter);
     }
 
 }

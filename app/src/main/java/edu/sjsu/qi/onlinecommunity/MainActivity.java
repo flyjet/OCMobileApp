@@ -57,6 +57,19 @@ public class MainActivity extends Activity {
 
         //TODO: implement actions of facebook_login
 
+        //Here Fackbook Login button as test button, can go directly to activity category
+        imageBt_facebook.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                try{
+                    Intent signupIntent = new Intent(MainActivity.this, ActivityCategory.class);
+                    startActivity(signupIntent);
+                }catch(Exception e){
+                    Log.e(TAG, e.toString());
+                }
+            }
+        });
+
+
     }
 
 }

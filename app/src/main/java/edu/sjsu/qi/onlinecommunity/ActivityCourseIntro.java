@@ -19,10 +19,10 @@ public class ActivityCourseIntro extends Activity {
 
     private static final String TAG = ActivityCourseIntro.class.getSimpleName();
 
+    ImageView iv_intro;
     ImageButton ibBack;
     Button btJoin;
-    ImageView ivIntro;
-
+    RelativeLayout relativeLayoutIntro;
 
     String courseName;
 
@@ -39,9 +39,9 @@ public class ActivityCourseIntro extends Activity {
         //Bundle extras = getIntent().getExtras();
         //courseName  = extras.getString("CourseName");
 
-        ivIntro = (ImageView)findViewById(R.id.imageView_intro);
+        iv_intro = (ImageView)findViewById(R.id.imageView_intro);
         //when user click the the imageView, it will go to Activity VideoPlayer
-        ivIntro.setOnClickListener(new View.OnClickListener(){
+        iv_intro.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View view){
                 Intent intent = new Intent(ActivityCourseIntro.this, ActivityVideoPlayer.class );

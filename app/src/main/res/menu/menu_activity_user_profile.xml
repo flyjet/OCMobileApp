@@ -1,7 +1,4 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="edu.sjsu.qi.skibuddy.ActivityCreateNewEvent">
-    <item android:id="@+id/action_edit"
-        android:icon="@drawable/icon_edit"
-        android:showAsAction="always" />
 </menu>

@@ -48,6 +48,7 @@ public class CourseFragment extends Fragment {
 
         //Get Category from ActivityCourseContainer
         category = getArguments().getString("Category");
+        //TODO here is Category may be "Current, Past, or Future"
         Log.d(TAG, "Category from CourseContainer Activity: " +  category);
     }
 
@@ -165,6 +166,7 @@ public class CourseFragment extends Fragment {
     private void queryCourseListFromDB(){
 
         //TODO: implement the AsyncTask to query list of courses by key word "category"
+        //TODO when do query, Category may be "Current, Past, or Future"
 
         //The following is hardcode
         CourseItem course1 = new CourseItem();

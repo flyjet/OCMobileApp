@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:paddingLeft="5dp"
-        android:textSize="18sp"
+        android:textSize="19sp"
         android:textStyle="bold"
         android:textColor="#2d5b9a"
         android:id="@+id/tv_lessonName"/>
@@ -20,8 +20,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_margin="10dp"
         android:background="#ffffff">
 
         <TextView
@@ -29,7 +28,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_des"
             android:padding="6dp"
-            android:textSize="15sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#2d5b9a"
             android:text="Lesson Description"/>
@@ -40,43 +39,77 @@
             android:layout_below="@+id/tv_des"
             android:id="@+id/tv_DesContent"
             android:padding="6dp"
-            android:textSize="14sp" />
+            android:textSize="15sp" />
     </RelativeLayout>
 
-    <TextView
+    <RelativeLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
         android:layout_margin="10dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="#2d5b9a"
-        android:text="这里还没有想好要怎么布局， 还不知道该怎么选时间，所以先放3个button在这里。
-        －－上课要约时间吗，可以是current吗，如果不可以， 那我们demo是怎么选
-        －－论坛也就是实时chat，那需要约时间吗或者是先判断老师是否在线，如果在线才可以聊天
-        －－关于video，没有上过课，是否也可以看video
-        －－Lesson是否有介绍的video"/>
+        android:background="#ffffff">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="In Class"
-        android:id="@+id/bt_InClass"
-        android:layout_gravity="center_horizontal" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_time"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#2d5b9a"
+            android:text="Available Time"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chat"
-        android:id="@+id/bt_Chat"
-        android:layout_gravity="center_horizontal" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_time"
+            android:id="@+id/tv_TimeContent"
+            android:padding="6dp"
+            android:textSize="15sp" />
+    </RelativeLayout>
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Play Video"
-        android:id="@+id/bt_PlayVideo"
-        android:layout_gravity="center_horizontal" />
+        android:layout_margin="10dp">
+
+        <Button
+            android:id="@+id/button_gotoclass"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/mybutton"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/button_gotoclass" />
+
+        <Button
+            android:id="@+id/button_chat"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/mybutton"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/button_chat" />
+
+        <Button
+            android:id="@+id/button_watchvideo"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/mybutton"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/button_watchvideo" />
+    </LinearLayout>
 
 
 </LinearLayout>

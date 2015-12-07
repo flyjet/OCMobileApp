@@ -1,16 +1,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.sjsu.qi.onlinecommunity.ActivityChat">
-
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="6sp"
-        android:id="@+id/listView_chat">
-    </ListView>
+    tools:context="edu.sjsu.qi.onlinecommunity.ActivityChat"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true" >
 
     <LinearLayout
         android:orientation="horizontal"
@@ -44,5 +37,16 @@
 
 
     </LinearLayout>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="6sp"
+        android:transcriptMode="alwaysScroll"
+        android:id="@+id/listView_chat"
+        android:layout_gravity="center_horizontal|bottom">
+    </ListView>
 
 </FrameLayout>

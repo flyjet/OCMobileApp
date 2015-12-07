@@ -61,7 +61,7 @@
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
-                android:background="#1569C7"
+                android:background="@drawable/mybutton"
                 android:layout_marginRight="10dip"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -72,7 +72,7 @@
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
-                android:background="#1569C7"
+                android:background="@drawable/mybutton"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:text="@string/button_login" />

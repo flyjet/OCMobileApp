@@ -30,9 +30,7 @@ public class ActivityUserEditProfile extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_edit) {
-            return true;
-        }
+
 
         return super.onOptionsItemSelected(item);
     }

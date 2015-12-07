@@ -99,6 +99,7 @@ public class ActivityUserProfile extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        /*
         //TODO not sure need Edit button for user change his profile
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_edit) {
@@ -107,7 +108,7 @@ public class ActivityUserProfile extends Activity {
             startActivity(intent);
 
             return true;
-        }
+        }*/
         return super.onOptionsItemSelected(item);
     }
 

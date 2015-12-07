@@ -55,9 +55,9 @@ public class ActivitySignup extends Activity {
                 //TODO: Need implement to add new user with name, email and password
 
 
-                //Goto activity Category
+                //Goto activity Login
                 try{
-                    Intent intent = new Intent(ActivitySignup.this, ActivityCategory.class);
+                    Intent intent = new Intent(ActivitySignup.this, ActivityLogin.class);
                     startActivity(intent);
                 }catch(Exception e){
                     Log.e(TAG, e.toString());
