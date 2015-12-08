@@ -40,6 +40,8 @@ public class ActivityCourseIntro extends Activity {
         //courseName  = extras.getString("CourseName");
 
         iv_intro = (ImageView)findViewById(R.id.imageView_intro);
+
+
         //when user click the the imageView, it will go to Activity VideoPlayer
         iv_intro.setOnClickListener(new View.OnClickListener(){
             @Override

@@ -33,15 +33,15 @@
             android:layout_marginTop="6dp"
             android:background="@android:color/transparent"
             />
-
-
-
     </LinearLayout>
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="60dp"
         android:divider="@android:color/transparent"
         android:dividerHeight="6sp"
         android:transcriptMode="alwaysScroll"
